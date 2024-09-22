@@ -16,12 +16,12 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch(`http://localhost:4000/allproducts`)
+    fetch(`https://ecommerce-l0a4.onrender.com/allproducts`)
       .then((res) => res.json())
       .then((data) => setAll_Product(data));
 
     if (localStorage.getItem("auth-token")) {
-      fetch(`http://localhost:4000/getcart`, {
+      fetch(`https://ecommerce-l0a4.onrender.com/getcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -49,7 +49,7 @@ const ShopContextProvider = (props) => {
       return newCart;
     });
     if (localStorage.getItem("auth-token")) {
-      fetch(`http://localhost:4000/addtocart`, {
+      fetch(`https://ecommerce-l0a4.onrender.com/addtocart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -74,7 +74,7 @@ const ShopContextProvider = (props) => {
     });
 
     if (localStorage.getItem("auth-token")) {
-      fetch(`http://localhost:4000/removefromcart`, {
+      fetch(`https://ecommerce-l0a4.onrender.com/removefromcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
